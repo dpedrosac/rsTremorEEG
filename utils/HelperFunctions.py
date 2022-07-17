@@ -6,8 +6,6 @@ import os
 import re
 from itertools import groupby
 from operator import itemgetter
-
-
 from dependencies import ROOTDIR, GITHUB
 
 
