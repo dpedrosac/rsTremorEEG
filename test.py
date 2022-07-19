@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from mne.preprocessing import (ICA, create_eog_epochs, create_ecg_epochs,
                                corrmap)
 
-def countdown(n):
+def countdown(n=10):
     """ very simple function intended to provide a countdown going form n to zero backwards """
 
     import time
@@ -32,6 +32,7 @@ def load_and_preprocess_data():
     raw =  mne.io.read_raw_brainvision(files2test[0], preload=True, verbose=True)
     raw.info['line_freq'] = 50
     raw_downsampled = raw.copy().resample(sfreq=200)
+    raw_downsampled2 = raw.copy().resample(sfreq=100)
 
     for cutoff in (0.1, 4):
         raw_highpass = raw_downsampled.copy().filter(l_freq=cutoff, h_freq=None)
