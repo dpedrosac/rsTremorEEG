@@ -44,7 +44,7 @@ def load_and_preprocess_data():
     raw_downsampled.set_montage(montage)
 
     # Plot Power spectrum, if necessary
-    raw_downsampled.plot_psd(fmax=50)
+    raw_downsampled.plot_psd(fmax=100)
     raw_downsampled.plot(duration=5, n_channels=30)
 
     # Artifact correcion; TODO a high-pass filter is recommended, which could be added here
